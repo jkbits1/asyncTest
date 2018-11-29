@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import {
-  SELECT_SUBREDDIT,
+  SELECT_TEAM,
   INVALIDATE_SUBREDDIT,
   REQUEST_POSTS,
   RECEIVE_POSTS
 } from '../actions';
 
-const selectedSubreddit = (state = 'reactjs', action) => {
+const selectedTeam = (state = 'reactjs', action) => {
   switch (action.type) {
-    case SELECT_SUBREDDIT:
+    case SELECT_TEAM:
       return action.subreddit;
     default:
       return state;
@@ -64,7 +64,7 @@ const postsBySubreddit = (state = {}, action) => {
 
 const rootReducer = combineReducers({
   postsBySubreddit,
-  selectedSubreddit
+  selectedTeam
 });
 
 export default rootReducer;
